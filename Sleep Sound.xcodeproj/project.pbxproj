@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		671BEA2A2BCB123E0036C356 /* Sleep_SoundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BEA292BCB123E0036C356 /* Sleep_SoundApp.swift */; };
+		671BEA2C2BCB123E0036C356 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BEA2B2BCB123E0036C356 /* ContentView.swift */; };
+		671BEA2E2BCB123F0036C356 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 671BEA2D2BCB123F0036C356 /* Assets.xcassets */; };
+		671BEA312BCB123F0036C356 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 671BEA302BCB123F0036C356 /* Preview Assets.xcassets */; };
+		671BEA3B2BCB123F0036C356 /* Sleep_SoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BEA3A2BCB123F0036C356 /* Sleep_SoundTests.swift */; };
+		671BEA452BCB123F0036C356 /* Sleep_SoundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BEA442BCB123F0036C356 /* Sleep_SoundUITests.swift */; };
+		671BEA472BCB123F0036C356 /* Sleep_SoundUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BEA462BCB123F0036C356 /* Sleep_SoundUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		671BEA372BCB123F0036C356 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 671BEA1E2BCB123E0036C356 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 671BEA252BCB123E0036C356;
+			remoteInfo = "Sleep Sound";
+		};
+		671BEA412BCB123F0036C356 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 671BEA1E2BCB123E0036C356 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 671BEA252BCB123E0036C356;
+			remoteInfo = "Sleep Sound";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		671BEA262BCB123E0036C356 /* Sleep Sound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sleep Sound.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		671BEA292BCB123E0036C356 /* Sleep_SoundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep_SoundApp.swift; sourceTree = "<group>"; };
+		671BEA2B2BCB123E0036C356 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		671BEA2D2BCB123F0036C356 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		671BEA302BCB123F0036C356 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		671BEA362BCB123F0036C356 /* Sleep SoundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sleep SoundTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		671BEA3A2BCB123F0036C356 /* Sleep_SoundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep_SoundTests.swift; sourceTree = "<group>"; };
+		671BEA402BCB123F0036C356 /* Sleep SoundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sleep SoundUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		671BEA442BCB123F0036C356 /* Sleep_SoundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep_SoundUITests.swift; sourceTree = "<group>"; };
+		671BEA462BCB123F0036C356 /* Sleep_SoundUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep_SoundUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		671BEA232BCB123E0036C356 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		671BEA332BCB123F0036C356 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		671BEA3D2BCB123F0036C356 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		671BEA1D2BCB123E0036C356 = {
+			isa = PBXGroup;
+			children = (
+				671BEA282BCB123E0036C356 /* Sleep Sound */,
+				671BEA392BCB123F0036C356 /* Sleep SoundTests */,
+				671BEA432BCB123F0036C356 /* Sleep SoundUITests */,
+				671BEA272BCB123E0036C356 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		671BEA272BCB123E0036C356 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				671BEA262BCB123E0036C356 /* Sleep Sound.app */,
+				671BEA362BCB123F0036C356 /* Sleep SoundTests.xctest */,
+				671BEA402BCB123F0036C356 /* Sleep SoundUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		671BEA282BCB123E0036C356 /* Sleep Sound */ = {
+			isa = PBXGroup;
+			children = (
+				671BEA292BCB123E0036C356 /* Sleep_SoundApp.swift */,
+				671BEA2B2BCB123E0036C356 /* ContentView.swift */,
+				671BEA2D2BCB123F0036C356 /* Assets.xcassets */,
+				671BEA2F2BCB123F0036C356 /* Preview Content */,
+			);
+			path = "Sleep Sound";
+			sourceTree = "<group>";
+		};
+		671BEA2F2BCB123F0036C356 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				671BEA302BCB123F0036C356 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		671BEA392BCB123F0036C356 /* Sleep SoundTests */ = {
+			isa = PBXGroup;
+			children = (
+				671BEA3A2BCB123F0036C356 /* Sleep_SoundTests.swift */,
+			);
+			path = "Sleep SoundTests";
+			sourceTree = "<group>";
+		};
+		671BEA432BCB123F0036C356 /* Sleep SoundUITests */ = {
+			isa = PBXGroup;
+			children = (
+				671BEA442BCB123F0036C356 /* Sleep_SoundUITests.swift */,
+				671BEA462BCB123F0036C356 /* Sleep_SoundUITestsLaunchTests.swift */,
+			);
+			path = "Sleep SoundUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		671BEA252BCB123E0036C356 /* Sleep Sound */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 671BEA4A2BCB123F0036C356 /* Build configuration list for PBXNativeTarget "Sleep Sound" */;
+			buildPhases = (
+				671BEA222BCB123E0036C356 /* Sources */,
+				671BEA232BCB123E0036C356 /* Frameworks */,
+				671BEA242BCB123E0036C356 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sleep Sound";
+			productName = "Sleep Sound";
+			productReference = 671BEA262BCB123E0036C356 /* Sleep Sound.app */;
+			productType = "com.apple.product-type.application";
+		};
+		671BEA352BCB123F0036C356 /* Sleep SoundTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 671BEA4D2BCB123F0036C356 /* Build configuration list for PBXNativeTarget "Sleep SoundTests" */;
+			buildPhases = (
+				671BEA322BCB123F0036C356 /* Sources */,
+				671BEA332BCB123F0036C356 /* Frameworks */,
+				671BEA342BCB123F0036C356 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				671BEA382BCB123F0036C356 /* PBXTargetDependency */,
+			);
+			name = "Sleep SoundTests";
+			productName = "Sleep SoundTests";
+			productReference = 671BEA362BCB123F0036C356 /* Sleep SoundTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		671BEA3F2BCB123F0036C356 /* Sleep SoundUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 671BEA502BCB123F0036C356 /* Build configuration list for PBXNativeTarget "Sleep SoundUITests" */;
+			buildPhases = (
+				671BEA3C2BCB123F0036C356 /* Sources */,
+				671BEA3D2BCB123F0036C356 /* Frameworks */,
+				671BEA3E2BCB123F0036C356 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				671BEA422BCB123F0036C356 /* PBXTargetDependency */,
+			);
+			name = "Sleep SoundUITests";
+			productName = "Sleep SoundUITests";
+			productReference = 671BEA402BCB123F0036C356 /* Sleep SoundUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		671BEA1E2BCB123E0036C356 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					671BEA252BCB123E0036C356 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					671BEA352BCB123F0036C356 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 671BEA252BCB123E0036C356;
+					};
+					671BEA3F2BCB123F0036C356 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 671BEA252BCB123E0036C356;
+					};
+				};
+			};
+			buildConfigurationList = 671BEA212BCB123E0036C356 /* Build configuration list for PBXProject "Sleep Sound" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 671BEA1D2BCB123E0036C356;
+			productRefGroup = 671BEA272BCB123E0036C356 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				671BEA252BCB123E0036C356 /* Sleep Sound */,
+				671BEA352BCB123F0036C356 /* Sleep SoundTests */,
+				671BEA3F2BCB123F0036C356 /* Sleep SoundUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		671BEA242BCB123E0036C356 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				671BEA312BCB123F0036C356 /* Preview Assets.xcassets in Resources */,
+				671BEA2E2BCB123F0036C356 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		671BEA342BCB123F0036C356 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		671BEA3E2BCB123F0036C356 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		671BEA222BCB123E0036C356 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				671BEA2C2BCB123E0036C356 /* ContentView.swift in Sources */,
+				671BEA2A2BCB123E0036C356 /* Sleep_SoundApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		671BEA322BCB123F0036C356 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				671BEA3B2BCB123F0036C356 /* Sleep_SoundTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		671BEA3C2BCB123F0036C356 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				671BEA472BCB123F0036C356 /* Sleep_SoundUITestsLaunchTests.swift in Sources */,
+				671BEA452BCB123F0036C356 /* Sleep_SoundUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		671BEA382BCB123F0036C356 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 671BEA252BCB123E0036C356 /* Sleep Sound */;
+			targetProxy = 671BEA372BCB123F0036C356 /* PBXContainerItemProxy */;
+		};
+		671BEA422BCB123F0036C356 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 671BEA252BCB123E0036C356 /* Sleep Sound */;
+			targetProxy = 671BEA412BCB123F0036C356 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		671BEA482BCB123F0036C356 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		671BEA492BCB123F0036C356 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		671BEA4B2BCB123F0036C356 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Sleep Sound/Preview Content\"";
+				DEVELOPMENT_TEAM = 3BVV3752R4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MaxBuchholz.Sleep-Sound";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		671BEA4C2BCB123F0036C356 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Sleep Sound/Preview Content\"";
+				DEVELOPMENT_TEAM = 3BVV3752R4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MaxBuchholz.Sleep-Sound";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		671BEA4E2BCB123F0036C356 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3BVV3752R4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MaxBuchholz.Sleep-SoundTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sleep Sound.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sleep Sound";
+			};
+			name = Debug;
+		};
+		671BEA4F2BCB123F0036C356 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3BVV3752R4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MaxBuchholz.Sleep-SoundTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sleep Sound.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sleep Sound";
+			};
+			name = Release;
+		};
+		671BEA512BCB123F0036C356 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3BVV3752R4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MaxBuchholz.Sleep-SoundUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Sleep Sound";
+			};
+			name = Debug;
+		};
+		671BEA522BCB123F0036C356 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3BVV3752R4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "MaxBuchholz.Sleep-SoundUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Sleep Sound";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		671BEA212BCB123E0036C356 /* Build configuration list for PBXProject "Sleep Sound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				671BEA482BCB123F0036C356 /* Debug */,
+				671BEA492BCB123F0036C356 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		671BEA4A2BCB123F0036C356 /* Build configuration list for PBXNativeTarget "Sleep Sound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				671BEA4B2BCB123F0036C356 /* Debug */,
+				671BEA4C2BCB123F0036C356 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		671BEA4D2BCB123F0036C356 /* Build configuration list for PBXNativeTarget "Sleep SoundTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				671BEA4E2BCB123F0036C356 /* Debug */,
+				671BEA4F2BCB123F0036C356 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		671BEA502BCB123F0036C356 /* Build configuration list for PBXNativeTarget "Sleep SoundUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				671BEA512BCB123F0036C356 /* Debug */,
+				671BEA522BCB123F0036C356 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 671BEA1E2BCB123E0036C356 /* Project object */;
+}
