@@ -16,12 +16,14 @@ class NoiseTypes{
         self.Types["green"] = greenNoise
         self.Types["brown"] = brownNoise
         self.Types["blue"] = blueNoise
+        self.Types["violet"] = violetNoise
         
         self.Gains["white"] = 0
         self.Gains["pink"] = 15
         self.Gains["green"] = 15
         self.Gains["brown"] = 30
         self.Gains["blue"] = 5
+        self.Gains["violet"] = 10
     }
     private func whiteNoise(values: [Int]) ->[Float]{
         var noiseDB = Array(repeating: Float(0.0), count: values.count)
@@ -60,6 +62,15 @@ class NoiseTypes{
         for i in 0..<(values.count){
             let octDiff = log(Float(initial / Float(values[i]))) / log(Float(2))
             noiseDB[i] = octDiff * -3
+        }
+        return noiseDB
+    }
+    private func violetNoise(values: [Int]) ->[Float]{
+        var noiseDB = Array(repeating: Float(0.0), count: values.count)
+        let initial = Float(values[values.count - 1])
+        for i in 0..<(values.count){
+            let octDiff = log(Float(initial / Float(values[i]))) / log(Float(2))
+            noiseDB[i] = octDiff * -6.02
         }
         return noiseDB
     }

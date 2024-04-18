@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67095C252BD099610008726A /* rainWindow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 67095C232BD099610008726A /* rainWindow.mp3 */; };
+		67095C262BD099610008726A /* whiteNoise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 67095C242BD099610008726A /* whiteNoise.mp3 */; };
 		671BEA2A2BCB123E0036C356 /* Sleep_SoundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BEA292BCB123E0036C356 /* Sleep_SoundApp.swift */; };
 		671BEA2C2BCB123E0036C356 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BEA2B2BCB123E0036C356 /* ContentView.swift */; };
 		671BEA2E2BCB123F0036C356 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 671BEA2D2BCB123F0036C356 /* Assets.xcassets */; };
@@ -17,7 +19,6 @@
 		671BEA552BCB13370036C356 /* AudioContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BEA542BCB13370036C356 /* AudioContentViewModel.swift */; };
 		671BEA5E2BCB1CB20036C356 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BEA5D2BCB1CB20036C356 /* Audio.swift */; };
 		671BEA602BCB893B0036C356 /* FFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BEA5F2BCB893B0036C356 /* FFT.swift */; };
-		671BEA6A2BCB9DB80036C356 /* whiteNoise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 671BEA692BCB9DB80036C356 /* whiteNoise.mp3 */; };
 		6751F1462BCF22D500AFAEFF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6751F1452BCF22D500AFAEFF /* Color.swift */; };
 		6751F1492BCF2A7500AFAEFF /* SwiftUISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6751F1482BCF2A7500AFAEFF /* SwiftUISlider.swift */; };
 		67D833E02BCDEA6F00FAC54F /* NoiseTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D833DF2BCDEA6F00FAC54F /* NoiseTypes.swift */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		67095C232BD099610008726A /* rainWindow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rainWindow.mp3; sourceTree = "<group>"; };
+		67095C242BD099610008726A /* whiteNoise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = whiteNoise.mp3; sourceTree = "<group>"; };
 		671BEA262BCB123E0036C356 /* Sleep Sound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sleep Sound.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		671BEA292BCB123E0036C356 /* Sleep_SoundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep_SoundApp.swift; sourceTree = "<group>"; };
 		671BEA2B2BCB123E0036C356 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,7 +57,6 @@
 		671BEA542BCB13370036C356 /* AudioContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioContentViewModel.swift; sourceTree = "<group>"; };
 		671BEA5D2BCB1CB20036C356 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		671BEA5F2BCB893B0036C356 /* FFT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFT.swift; sourceTree = "<group>"; };
-		671BEA692BCB9DB80036C356 /* whiteNoise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = whiteNoise.mp3; sourceTree = "<group>"; };
 		6751F1442BCF061E00AFAEFF /* Sleep-Sound-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sleep-Sound-Info.plist"; sourceTree = SOURCE_ROOT; };
 		6751F1452BCF22D500AFAEFF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		6751F1482BCF2A7500AFAEFF /* SwiftUISlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISlider.swift; sourceTree = "<group>"; };
@@ -165,7 +167,8 @@
 		671BEA572BCB18A70036C356 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				671BEA692BCB9DB80036C356 /* whiteNoise.mp3 */,
+				67095C232BD099610008726A /* rainWindow.mp3 */,
+				67095C242BD099610008726A /* whiteNoise.mp3 */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -287,8 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				671BEA312BCB123F0036C356 /* Preview Assets.xcassets in Resources */,
-				671BEA6A2BCB9DB80036C356 /* whiteNoise.mp3 in Resources */,
 				671BEA2E2BCB123F0036C356 /* Assets.xcassets in Resources */,
+				67095C252BD099610008726A /* rainWindow.mp3 in Resources */,
+				67095C262BD099610008726A /* whiteNoise.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

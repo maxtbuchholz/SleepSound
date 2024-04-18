@@ -11,7 +11,7 @@ import AVFoundation
 class AudioContentViewModel: ObservableObject {
     public var backFrequencies: [Int] = [63, 94, 125, 187, 250, 375, 500, 750, 1000, 1500, 2000, 3000, 4000, 6000, 8000, 12000, 16000, 20000]
     private var freqEQOuter: [Float] = Array(repeating: Float(0.0), count: 17)
-    public var frequencies: [Int] = [125, 500, 1000, 2000, 8000, 20000]
+    public var frequencies: [Int] = [125, 500, 1000, 2000, 8000, 16000]
     @Published var audio : Audio
     private var logarithmicBinsFreq : [Float] = []
     private var linearToLogarithmicBins : [[Int]] = [[]]
@@ -58,9 +58,6 @@ class AudioContentViewModel: ObservableObject {
             } else if(start + 1 == frequencies.count){
                 outerInnerFrequencyPercentages[i][frequencies.count - 1] = 1
             } else{   //in between inner frequencies
-                if(i == 17){
-                    print("16 going on 17")
-                }
                 let distanceAbove = backFrequencies[i] - frequencies[start]
                 let distanceBetween = frequencies[start + 1] - frequencies[start]
                 let perToUpper = Float(distanceAbove) / Float(distanceBetween)
@@ -122,8 +119,8 @@ class AudioContentViewModel: ObservableObject {
         audio.stop()
         audio.end()
         audio = Audio.init(music: audioFile, frequencies: backFrequencies)!
-        if(!currentlyPlaying){
-            audio.pause()
+        if(currentlyPlaying){
+            audio.play()
         }
     }
 }
