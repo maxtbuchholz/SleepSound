@@ -18,7 +18,7 @@ class AudioContentViewModel: ObservableObject {
     private var fftBinFreq : [Float] = []
     private var sampleRate : Double = 44100.0
     let bufferSize = 1024
-    var halfbufferSize = 512
+    var halfbufferSize = 256
     private var outerInnerFrequencyPercentages: [[Int : Float]] = []
     init(audioFile: String) {
         audio = Audio(music: audioFile, frequencies: backFrequencies)!

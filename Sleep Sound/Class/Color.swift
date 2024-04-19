@@ -18,4 +18,5 @@ extension Color {
     static let stertiary = Color("Tertiary")
     static let squaternary = Color("Quaternary")
     static let squinary = Color("Quinary")
+    static let sdisabled_text = Color("DisabledText")
 }

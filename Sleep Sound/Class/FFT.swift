@@ -23,7 +23,7 @@ class FFT{
     }
     static var boh = Float(0.00000000001)
     static func vfft(data: UnsafeMutablePointer<Float>, setup: OpaquePointer) -> [Float]{
-        let bufferSize = 512
+        let bufferSize = 1024
         let barAmount = 30
         var realIn = [Float](repeating: 0, count: bufferSize)
         var imagIn = [Float](repeating: 0, count: bufferSize)

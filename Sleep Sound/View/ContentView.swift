@@ -8,11 +8,16 @@
 import SwiftUI
 import Charts
 import UIKit
+import Accelerate
 struct ContentView: View {
     @ObservedObject private var viewModel : AudioContentViewModel
     @State private var transparency = 0.0
-    @State private var waveData : [Float] = Array(repeating: 0, count: 400)
-    @State private var fftData : [Float] = Array(repeating: 0, count: 40)
+    @State private var waveData : [Float] = Array(repeating: 0, count: 100)
+    @State private var fftData : [Float] = Array(repeating: 0, count: 30)
+    @State private var longTimeWaveData : [Float] = Array(repeating: 0, count: 50)
+    @State private var longTimeFftData : [Float] = Array(repeating: 0, count: 30)
+    @State private var prevLongTimeWaveData : [Float] = Array(repeating: 0, count: 50)
+    @State private var prevLongTimeFftData : [Float] = Array(repeating: 0, count: 30)
     @State public var soundPlaying : Bool = false
     @State fileprivate var freqEQInner: [Float] = [0, -6, -9, -12, -18, -21]
     @State private var pickedNoiseType : String = "pink"
@@ -22,9 +27,14 @@ struct ContentView: View {
     @State var gainNeedsUpdate: Bool = false
     @State var backgroundRotation = 0.0
     @State var timePickerTime : Date = Date.now
+    @State var BottomPickerTime : Date = Date.now
     @State var seconds = 15
+    @State var hoursLeft = 0
+    @State var minutesLeft = 0
+    @State var secondsLeft = 0
+    @State var mainTimer = Timer.publish(every: TimeInterval(Int.max), on: .main, in: .common).autoconnect()
     private var  noiseTypes : NoiseTypes = NoiseTypes.init()
-    var timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
+    //var timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
     var body: some View {
         VStack {
             ZStack{
@@ -76,7 +86,7 @@ struct ContentView: View {
                     }
                     ZStack
                     {
-                        Text("00:00:00") .font(.system(size: 40)).padding(10).overlay(
+                        Text("\(toTimeString(num: hoursLeft)):\(toTimeString(num: minutesLeft)):\(toTimeString(num: secondsLeft))").foregroundStyle(soundPlaying ? Color.sdisabled_text : Color.plain).font(.system(size: 40)).padding(10).overlay(
                             RoundedRectangle(cornerRadius: 10).stroke(Color.splain, lineWidth: 1).fill(.white).opacity(0.1).allowsHitTesting(false)
                         ).overlay(
                             DatePicker("", selection: $timePickerTime, displayedComponents: .hourAndMinute)
@@ -89,28 +99,66 @@ struct ContentView: View {
                                 .accentColor(.clear)
                                 .disabled(soundPlaying)
                                 .onTapGesture{
+                                    let baseCalendar = Calendar.current
+                                    var baseComponents = DateComponents()
+                                    baseComponents.year = 2000
+                                    baseComponents.month = 1
+                                    baseComponents.day = 1
+                                    baseComponents.hour = 0
+                                    baseComponents.minute = 0
+                                    baseComponents.second = 0
+                                    BottomPickerTime = baseCalendar.date(from: baseComponents)!
                                     let calendar = Calendar.current
                                     var components = DateComponents()
                                     components.year = 2000
                                     components.month = 1
                                     components.day = 1
-                                    components.hour = 0
-                                    components.minute = 0
+                                    components.hour = hoursLeft
+                                    components.minute = minutesLeft
+                                    components.second = secondsLeft
                                     timePickerTime = calendar.date(from: components)!
                                 }
-                                //.frame(width: 1000)
-                                //.transformEffect(.init(scaleX: 10, y: 10))
-//                                .datePickerStyle(.graphical).environment(\.locale, .init(identifier: "de"))
+                                .onChange(of: timePickerTime) {
+                                    let difference = Calendar.current.dateComponents([.hour, .minute], from: BottomPickerTime, to: timePickerTime)
+                                    hoursLeft = difference.hour ?? 0
+                                    minutesLeft = difference.minute ?? 0
+                                    secondsLeft = 00
+
+                                }.onReceive(mainTimer) { _ in
+                                    if(secondsLeft > 0){
+                                        secondsLeft -= 1
+                                    } else if(minutesLeft > 0){
+                                        minutesLeft -= 1
+                                        secondsLeft = 59
+                                    } else if(hoursLeft > 0){
+                                        hoursLeft -= 1
+                                        minutesLeft = 59
+                                        secondsLeft = 59
+                                    } else{
+                                        secondsLeft = 0
+                                        minutesLeft = 0
+                                        hoursLeft = 0
+                                        soundPlaying = false
+                                        viewModel.PlayPause(play: soundPlaying)
+                                    }
+                                }.onChange(of: soundPlaying) {
+                                    if(soundPlaying && ((hoursLeft + minutesLeft + secondsLeft) > 0)){
+                                        mainTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+                                    }else{
+                                        mainTimer.upstream.connect().cancel()
+                                    }
+                                }
                         )
                     }
-                    let waveTimer = Timer.publish(every: 0.1, on: RunLoop.main, in: .common).autoconnect()
                     ZStack{
                         Chart(Array(waveData.enumerated()), id: \.0){ index, yMag in
                             LineMark(
                                 x: .value("index", index),
                                 y: .value("value", yMag)
                             ).interpolationMethod(.catmullRom)
-                        }.foregroundColor(Color.squinary).frame(width: UIScreen.main.bounds.width, height: 200).onReceive(waveTimer, perform: updateWaveData).chartYAxis(.hidden).chartXAxis(.hidden).chartXScale(domain: [0, 100])
+                        }.foregroundColor(Color.squinary).frame(width: UIScreen.main.bounds.width, height: 200)
+                            //.onReceive(waveTimer, perform: updateWaveData)
+                            .chartYAxis(.hidden).chartXAxis(.hidden).chartXScale(domain: [0, 99]).onAppear{updateWaveData(tS: Date.now)}
                         Button{
                             soundPlaying.toggle()
                             viewModel.PlayPause(play: soundPlaying)
@@ -168,13 +216,13 @@ struct ContentView: View {
                             x: .value("index", index),
                             y: .value("value", yMag)
                         )
-                    }.foregroundColor(Color.squinary).chartYAxis(.hidden).chartXAxis(.hidden).chartYScale(domain: [0, 8]).chartXScale(domain: [0, 30]).frame(maxHeight: .infinity).edgesIgnoringSafeArea(.bottom)
-                }.frame(maxHeight: .infinity).edgesIgnoringSafeArea(.bottom)//.background(Color.sbackground) //vstack
+                    }.foregroundColor(Color.squinary).chartYAxis(.hidden).chartXAxis(.hidden).chartYScale(domain: [0, 8]).chartXScale(domain: [0, 29]).frame(maxHeight: .infinity).edgesIgnoringSafeArea(.bottom)
+                }.frame(maxHeight: .infinity).edgesIgnoringSafeArea(.bottom)
             }
         }
     }
     func updateWaveData(tS : Date){
-        backgroundRotation += 1
+        //backgroundRotation += 0.2
         if(eQNeedsUpdate){
             Task{
                 await viewModel.SpreadEQFromValues(innerFreqEQ: freqEQInner)
@@ -185,7 +233,8 @@ struct ContentView: View {
             viewModel.gainChanged(gain: gainSliderValue)
             gainNeedsUpdate = false
         }
-        withAnimation(.easeOut(duration: 0.4)) {
+        withAnimation(.linear(duration: 0.18)) {
+            
             if(soundPlaying){
                 waveData = viewModel.outWave()
                 fftData = viewModel.outFFTMag()
@@ -194,11 +243,22 @@ struct ContentView: View {
                 fftData = Array(repeating: 0, count: fftData.count)
             }
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.16) {
+            updateWaveData(tS: Date.now)
+        }
     }
+    //let waveTimer = Timer.publish(every: 0.2, on: RunLoop.main, in: .common).autoconnect()
     private func toStringWithLength(num: Int, length: Int) -> String {
         var sNum = "\(num)"
         for i in sNum.count..<(length){
             sNum = " " + sNum
+        }
+        return sNum
+    }
+    private func toTimeString(num: Int) -> String {
+        var sNum = "\(num)"
+        for i in sNum.count..<(2){
+            sNum = "0" + sNum
         }
         return sNum
     }
@@ -225,19 +285,3 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
-//class ContentClass{
-//
-//    func SetValues(freqEQInner: inout [Float], viewModel: AudioContentViewModel, pickedNoiseType: inout String){
-//        self.freqEQInner =  freqEQInner
-//        self.viewModel = viewModel
-//        self.pickedNoiseType = pickedNoiseType
-//    }
-//    var viewModel: AudioContentViewModel = AudioContentViewModel.init()
-//    var freqEQInner: [Float] = []
-//    var noiseTypes : NoiseTypes = NoiseTypes.init()
-//    var pickedNoiseType: String = ""
-//    @objc func UpdateEQSlider(){
-//        freqEQInner = noiseTypes.Types[pickedNoiseType]!(viewModel.frequencies)
-//        viewModel.SpreadEQFromValues(innerFreqEQ: freqEQInner)
-//    }
-//}

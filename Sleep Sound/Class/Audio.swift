@@ -72,7 +72,7 @@ class Audio {
         if let audioFileBuffer = audioFileBuffer {
             player.scheduleBuffer(audioFileBuffer, at: nil, options: .loops, completionHandler: nil)
         }
-        let bufferSize = 512
+        let bufferSize = 1024
         let waveDisplaySize = 100
         
         let fftSetup = vDSP_DFT_zop_CreateSetup(
@@ -90,14 +90,12 @@ class Audio {
                 if(waveMag.count != waveDisplaySize){
                     waveMag = Array(repeating: Float(0.0), count: waveDisplaySize)
                 }
-                var tempFullWave = Array(repeating: Float(0.0), count: bufferSize)
                     for i in 0..<(bufferSize){
                         if(i < waveDisplaySize){
                             waveMag[i] = (samples?[i])!
                         }
-                        tempFullWave[i] = (samples?[i])!
-                    fftMag = FFT.vfft(data: samples!, setup: fftSetup!)
                 }
+                fftMag = FFT.vfft(data: samples!, setup: fftSetup!)
             }
         engineStart()
     }
