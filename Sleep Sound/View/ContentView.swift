@@ -19,7 +19,7 @@ struct ContentView: View {
     @State private var prevLongTimeWaveData : [Float] = Array(repeating: 0, count: 50)
     @State private var prevLongTimeFftData : [Float] = Array(repeating: 0, count: 30)
     @State public var soundPlaying : Bool = false
-    @State fileprivate var freqEQInner: [Float] = [0, -6, -9, -12, -18, -21]
+    @State fileprivate var freqEQInner: [Float] = [0, -3, -6, -9, -12, -15, -18, -21]
     @State private var pickedNoiseType : String = "pink"
     @State private var pickedAudioFile : String = "whiteNoise"
     @State private var gainSliderValue : Float = Float(15)
@@ -175,7 +175,7 @@ struct ContentView: View {
                                 Image(systemName: "play.fill").font(.system(size: 64)).scaleEffect(soundPlaying ? 0 : 1).opacity(soundPlaying ? 0 : 1).animation(.interpolatingSpring(stiffness: 170, damping: 15), value: !soundPlaying).tint(Color.splain)
                             }//.overlay(Circle().stroke(Color.splain, lineWidth: 1)).background(Color.sbackground)
                         }
-                    }
+                    }.frame(maxHeight: UIScreen.main.bounds.size.height / 6)
                     HStack{
                         Text("Gain")
                         SwiftUISlider(
@@ -189,7 +189,6 @@ struct ContentView: View {
                         )
                     }.padding(EdgeInsets(top: -5, leading: 15, bottom: -5, trailing: 15))
                     VStack{
-                        //List{
                         VStack{
                             ForEach(0..<viewModel.frequencies.count) { i in
                                 HStack{
@@ -214,7 +213,8 @@ struct ContentView: View {
                     Chart(Array(fftData.enumerated()), id: \.0){ index, yMag in
                         BarMark(
                             x: .value("index", index),
-                            y: .value("value", yMag)
+                            y: .value("value", yMag),
+                            width: .fixed(UIScreen.main.bounds.size.width / 40)
                         )
                     }.foregroundColor(Color.squinary).chartYAxis(.hidden).chartXAxis(.hidden).chartYScale(domain: [0, 8]).chartXScale(domain: [0, 29]).frame(maxHeight: .infinity).edgesIgnoringSafeArea(.bottom)
                 }.frame(maxHeight: .infinity).edgesIgnoringSafeArea(.bottom)

@@ -11,7 +11,7 @@ import AVFoundation
 class AudioContentViewModel: ObservableObject {
     public var backFrequencies: [Int] = [63, 94, 125, 187, 250, 375, 500, 750, 1000, 1500, 2000, 3000, 4000, 6000, 8000, 12000, 16000, 20000]
     private var freqEQOuter: [Float] = Array(repeating: Float(0.0), count: 17)
-    public var frequencies: [Int] = [125, 500, 1000, 2000, 8000, 16000]
+    public var frequencies: [Int] = [125, 250, 500, 1000, 2000, 4000, 8000, 16000]
     @Published var audio : Audio
     private var logarithmicBinsFreq : [Float] = []
     private var linearToLogarithmicBins : [[Int]] = [[]]
