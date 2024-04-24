@@ -66,7 +66,7 @@ struct ContentView: View {
                             Text("Blue").tag("blue")
                             Text("Violet").tag("violet")
                         }.tint(Color.splain).overlay(
-                            RoundedRectangle(cornerRadius: 10).stroke(Color.splain, lineWidth: 1).fill(.white).opacity(0.1).allowsHitTesting(false)
+                            RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(Color.splain, lineWidth: 1).fill(.white).opacity(0.1).allowsHitTesting(false)
                         ).onChange(of: pickedNoiseType) {
                             Task{
                                 gainSliderValue = noiseTypes.Gains[pickedNoiseType]!
@@ -222,7 +222,7 @@ struct ContentView: View {
         }
     }
     func updateWaveData(tS : Date){
-        //backgroundRotation += 0.2
+        backgroundRotation += 1
         if(eQNeedsUpdate){
             Task{
                 await viewModel.SpreadEQFromValues(innerFreqEQ: freqEQInner)
